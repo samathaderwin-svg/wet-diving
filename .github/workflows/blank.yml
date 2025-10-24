@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WET DIVING</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .event-card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-primary text-white text-center py-5">
+        <h1>WET DIVING</h1>
+        <p>Your Premier Entertainment Destination for Thrilling Water Adventures</p> PROUDLY SPONSORED BY</p> ANNONYMOUS ENTERTAINMENT | SaINT JHN | THE MAN WITH THE ENERGY
+    </header>
+
+    <section id="upcoming-events" class="container my-5">
+        <h2 class="text-center mb-4">Upcoming Events</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://uploads.onecompiler.io/43y5e8pms/43y5dtbrs/IMG_4867.jpeg" class="card-img-top" alt="Upcoming Event 1">
+                    <div class="card-body">
+                        <h5 class="card-title">W E T DIVING III ⚡️</h5>
+                        <p class="card-text"><strong>Venue:</strong> Ripples Hotel Beside Magrite supermarket, Rising Road Oshogbo</p>
+                        <p class="card-text"><strong>Date:</strong> Dec 6, 2025 9:00pm</p>
+                        <button class="btn btn-primary" onclick="buyTicket('deep-dive', 5000, 'user@example.com')">Buy Ticket (₦5,000)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://picsum.photos/seed/event2/300/200" class="card-img-top" alt="Upcoming Event 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Splash Night Party</h5>
+                        <p class="card-text"><strong>Venue:</strong> Abuja Water Park</p>
+                        <p class="card-text"><strong>Date:</strong> December 5, 2025</p>
+                        <button class="btn btn-primary" onclick="buyTicket('splash-night', 7000, 'user@example.com')">Buy Ticket (₦7,000)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://picsum.photos/seed/event3/300/200" class="card-img-top" alt="Upcoming Event 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Underwater Adventure Fest</h5>
+                        <p class="card-text"><strong>Venue:</strong> Port Harcourt Marina</p>
+                        <p class="card-text"><strong>Date:</strong> January 10, 2026</p>
+                        <button class="btn btn-primary" onclick="buyTicket('underwater-fest', 10000, 'user@example.com')">Buy Ticket (₦10,000)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="past-events" class="container my-5 bg-light py-4">
+        <h2 class="text-center mb-4">Past Events</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://uploads.onecompiler.io/43y5e8pms/43y5dtbrs/d13768d7-bd53-4e02-87e8-20fced63fc76.jpeg" class="card-img-top" alt="Past Event 1">
+                    <div class="card-body">
+                        <h5 class="card-title">RUME FEST</h5>
+                        <p class="card-text"><strong>Venue:</strong> Uniosun okuku campus</p>
+                        <p class="card-text"><strong>Date:</strong> 2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://uploads.onecompiler.io/43y5e8pms/43y5dtbrs/f807faa7-17c4-4738-8744-72769ec70268.jpeg" class="card-img-top" alt="Past Event 2">
+                    <div class="card-body">
+                        <h5 class="card-title">RUME FEST 2.0</h5>
+                        <p class="card-text"><strong>Venue:</strong> Uniosun Okuku Campus</p>
+                        <p class="card-text"><strong>Date:</strong> 2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://uploads.onecompiler.io/43y5e8pms/43y5dtbrs/95256121-4608-4ea5-ae2a-da6123c94061.jpeg" class="card-img-top" alt="Past Event 3">
+                    <div class="card-body">
+                        <h5 class="card-title">RUME FEST 4.0</h5>
+                        <p class="card-text"><strong>Venue:</strong> Uniosun Okuku Campus</p>
+                        <p class="card-text"><strong>Date:</strong> Feb 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 WET DIVING. All rights reserved.</p>
+    </footer>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script>
+        function buyTicket(eventName, amount, email) {
+            // Note: In a real scenario, collect email and other details via a form.
+            // Replace 'pk_test_your_public_key' with your actual Paystack test public key.
+            var handler = PaystackPop.setup({
+                key: 'pk_live_462b08c7302fc67b9852430d044feed7a44308b2', // Replace with your Paystack public key
+                email: 'pauloosupreme12345@gmail.com', // Replace with actual user email
+                amount: amount * 100, // Amount in kobo (NGN smallest unit)
+                currency: 'NGN',
+                ref: '' + Math.floor((Math.random() * 1000000000) + 1), // Unique reference
+                metadata: {
+                    event_name: eventName
+                },
+                callback: function(response) {
+                    alert('Payment successful! Reference: ' + response.reference + '. Enjoy ' + eventName + '!');
+                },
+                onClose: function() {
+                    alert('Payment window closed.');
+                }
+            });
+            handler.openIframe();
+        }
+    </script>
+
+</body>
+</html>
